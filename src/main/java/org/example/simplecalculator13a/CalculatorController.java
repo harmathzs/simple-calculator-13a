@@ -27,7 +27,15 @@ public class CalculatorController implements Initializable {
         welcomeText.setText("Welcome to JavaFX Application!");
     }
 
+    private void debugger() {
+        int i=0;
+    }
+
     public void handleCalculate(ActionEvent actionEvent) {
+        double a = Double.parseDouble(firstTextField.getText());
+        double b = Double.parseDouble(secondTextField.getText());
+        String operation = operationChoiceBox.getValue();
+        debugger();
     }
 
     @Override
