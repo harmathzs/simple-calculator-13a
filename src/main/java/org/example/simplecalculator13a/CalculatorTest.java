@@ -36,4 +36,13 @@ public class CalculatorTest {
         controller.handleCalculate(null);
         controller.isRunningTest = false;
     }
+    @Test
+    public void testControllerMultiply() {
+        CalculatorController controller = new CalculatorController();
+        controller.isRunningTest = true;
+        controller.testOperation = '*';
+        controller.initialize(null, null);
+        controller.handleCalculate(null);
+        controller.isRunningTest = false;
+    }
 }
