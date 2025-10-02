@@ -1,5 +1,6 @@
 package org.example.simplecalculator13a;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -25,6 +26,9 @@ public class CalculatorTest {
         controller.isRunningTest = true;
         controller.initialize(null, null);
         controller.handleCalculate(null);
+
+        Assert.assertEquals(controller.testA+controller.testB, controller.testResult, 0.01);
+
         controller.isRunningTest = false;
     }
     @Test
@@ -34,6 +38,7 @@ public class CalculatorTest {
         controller.testOperation = '-';
         controller.initialize(null, null);
         controller.handleCalculate(null);
+        Assert.assertEquals(controller.testA-controller.testB, controller.testResult, 0.01);
         controller.isRunningTest = false;
     }
     @Test
@@ -43,6 +48,7 @@ public class CalculatorTest {
         controller.testOperation = '*';
         controller.initialize(null, null);
         controller.handleCalculate(null);
+        Assert.assertEquals(controller.testA*controller.testB, controller.testResult, 0.01);
         controller.isRunningTest = false;
     }
     @Test
@@ -52,6 +58,7 @@ public class CalculatorTest {
         controller.testOperation = ':';
         controller.initialize(null, null);
         controller.handleCalculate(null);
+        Assert.assertEquals(controller.testA/controller.testB, controller.testResult, 0.01);
         controller.isRunningTest = false;
     }
     @Test
@@ -62,6 +69,7 @@ public class CalculatorTest {
         controller.testB = 0.0;
         controller.initialize(null, null);
         controller.handleCalculate(null);
+        Assert.assertEquals(0.0, controller.testResult, 0.01);
         controller.isRunningTest = false;
     }
 }

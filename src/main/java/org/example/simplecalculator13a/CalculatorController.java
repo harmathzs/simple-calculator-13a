@@ -21,6 +21,8 @@ public class CalculatorController implements Initializable {
     public double testB = 2.0;
     public char testOperation = '+';
 
+    public double testResult = 0.0;
+
     @FXML public TextField firstTextField;
     @FXML public ChoiceBox<String> operationChoiceBox;
     @FXML public TextField secondTextField;
@@ -74,6 +76,7 @@ public class CalculatorController implements Initializable {
                 break;
             }
         }
+        testResult = c;
         if (!isRunningTest) resultLabel.setText(result);
     }
 
