@@ -14,6 +14,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+/**
+ * CalculatorController
+ *
+ * @author Zsolt Harmath
+ * @since 2025-10-02
+ */
 public class CalculatorController implements Initializable {
     public boolean isRunningTest = false;
 
@@ -38,10 +44,22 @@ public class CalculatorController implements Initializable {
 
      */
 
+    /**
+     * debugger()
+     *
+     * @author Zsolt Harmath
+     * @since 2025-10-02
+     */
     private void debugger() {
         int i=0;
     }
 
+    /**
+     * handleCalculate()
+     *
+     * @author Zsolt Harmath
+     * @since 2025-10-02
+     */
     public void handleCalculate(ActionEvent actionEvent) {
         String result = "";
         double a = isRunningTest ? testA : Double.parseDouble(firstTextField.getText());

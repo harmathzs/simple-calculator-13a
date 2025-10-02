@@ -7,6 +7,12 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * CalculatorApplication
+ *
+ * @author Zsolt Harmath
+ * @since 2025-10-02
+ */
 public class CalculatorApplication extends Application {
     public static boolean isRunningTest = false;
 
