@@ -20,9 +20,18 @@ public class CalculatorTest {
         CalculatorApplication.isRunningTest = false;
     }
     @Test
-    public void testController() {
+    public void testControllerAdd() {
         CalculatorController controller = new CalculatorController();
         controller.isRunningTest = true;
+        controller.initialize(null, null);
+        controller.handleCalculate(null);
+        controller.isRunningTest = false;
+    }
+    @Test
+    public void testControllerSubtract() {
+        CalculatorController controller = new CalculatorController();
+        controller.isRunningTest = true;
+        controller.testOperation = '-';
         controller.initialize(null, null);
         controller.handleCalculate(null);
         controller.isRunningTest = false;
