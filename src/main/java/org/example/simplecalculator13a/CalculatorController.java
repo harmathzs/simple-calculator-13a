@@ -36,6 +36,27 @@ public class CalculatorController implements Initializable {
         double b = Double.parseDouble(secondTextField.getText());
         String operation = operationChoiceBox.getValue();
         debugger();
+        char operationChar = operation.charAt(0);
+        double c = 0.0;
+        switch (operationChar) {
+            case '+': {
+                c = a+b;
+                break;
+            }
+            case '-': {
+                c = a-b;
+                break;
+            }
+            case '*': {
+                c = a*b;
+                break;
+            }
+            case ':': {
+                c = a/b; // TODO - handle division by zero!
+                break;
+            }
+        }
+        resultLabel.setText("= "+c);
     }
 
     @Override
