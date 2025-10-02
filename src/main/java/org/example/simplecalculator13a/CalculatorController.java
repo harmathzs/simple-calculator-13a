@@ -15,6 +15,12 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class CalculatorController implements Initializable {
+    public boolean isRunningTest = false;
+
+    public double testA = 3.0;
+    public double testB = 2.0;
+    public char testOperation = '+';
+
     @FXML public TextField firstTextField;
     @FXML public ChoiceBox<String> operationChoiceBox;
     @FXML public TextField secondTextField;
@@ -33,9 +39,9 @@ public class CalculatorController implements Initializable {
 
     public void handleCalculate(ActionEvent actionEvent) {
         String result = "";
-        double a = Double.parseDouble(firstTextField.getText());
-        double b = Double.parseDouble(secondTextField.getText());
-        String operation = operationChoiceBox.getValue();
+        double a = isRunningTest ? testA : Double.parseDouble(firstTextField.getText());
+        double b = isRunningTest ? testB : Double.parseDouble(secondTextField.getText());
+        String operation = isRunningTest ? ""+testOperation : operationChoiceBox.getValue();
         debugger();
         char operationChar = operation.charAt(0);
         double c = 0.0;
@@ -65,7 +71,7 @@ public class CalculatorController implements Initializable {
                 break;
             }
         }
-        resultLabel.setText(result);
+        if (!isRunningTest) resultLabel.setText(result);
     }
 
     @Override
@@ -77,7 +83,7 @@ public class CalculatorController implements Initializable {
         operations.add("*");
         operations.add(":");
         ObservableList<String> oListOfOperations = FXCollections.observableList(operations);
-        operationChoiceBox.setItems(oListOfOperations);
-        operationChoiceBox.setValue("+");
+        if (!isRunningTest) operationChoiceBox.setItems(oListOfOperations);
+        if (!isRunningTest) operationChoiceBox.setValue("+");
     }
 }

@@ -19,4 +19,12 @@ public class CalculatorTest {
         app.start(null);
         CalculatorApplication.isRunningTest = false;
     }
+    @Test
+    public void testController() {
+        CalculatorController controller = new CalculatorController();
+        controller.isRunningTest = true;
+        controller.initialize(null, null);
+        controller.handleCalculate(null);
+        controller.isRunningTest = false;
+    }
 }
