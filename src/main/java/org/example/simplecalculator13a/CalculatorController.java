@@ -28,10 +28,13 @@ public class CalculatorController implements Initializable {
     @FXML
     private Label welcomeText;
 
+    /*
     @FXML
     protected void onHelloButtonClick() {
         welcomeText.setText("Welcome to JavaFX Application!");
     }
+
+     */
 
     private void debugger() {
         int i=0;
