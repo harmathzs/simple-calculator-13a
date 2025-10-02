@@ -32,6 +32,7 @@ public class CalculatorController implements Initializable {
     }
 
     public void handleCalculate(ActionEvent actionEvent) {
+        String result = "";
         double a = Double.parseDouble(firstTextField.getText());
         double b = Double.parseDouble(secondTextField.getText());
         String operation = operationChoiceBox.getValue();
@@ -41,22 +42,30 @@ public class CalculatorController implements Initializable {
         switch (operationChar) {
             case '+': {
                 c = a+b;
+                result = "= "+c;
                 break;
             }
             case '-': {
                 c = a-b;
+                result = "= "+c;
                 break;
             }
             case '*': {
                 c = a*b;
+                result = "= "+c;
                 break;
             }
             case ':': {
-                c = a/b; // TODO - handle division by zero!
+                if (b==0.0) {
+                    result = "It's unwise to divide by zero.";
+                } else {
+                    c = a/b;
+                    result = "= "+c;
+                }
                 break;
             }
         }
-        resultLabel.setText("= "+c);
+        resultLabel.setText(result);
     }
 
     @Override
